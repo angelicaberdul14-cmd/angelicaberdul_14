@@ -1,0 +1,95 @@
+CREATE DATABASE IF NOT EXISTS angelica;
+
+CREATE TABLE IF NOT EXISTS patient(
+PatientID INT PRIMARY KEY,
+FirsName VARCHAR (50) NOT NULL,
+LastName VARCHAR (50) NOT NULL,
+Gender VARCHAR (50) NOT NULL 
+);
+CREATE TABLE IF NOT EXISTS doctor(
+DoctorID INT PRIMARY KEY,
+FirsName VARCHAR (50) NOT NULL,
+LastName VARCHAR (50) NOT NULL,
+Gender VARCHAR (50) NOT NULL 
+);
+CREATE TABLE IF NOT EXISTS departmentid(
+DepartmentID INT PRIMARY KEY,
+DepartmentName VARCHAR (50) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS Appointment(
+AppointmentID INT PRIMARY KEY,
+PatientID VARCHAR (50) NOT NULL,
+DoctorID VARCHAR (50) NOT NULL,
+AppoinmentDate VARCHAR (50) NOT NULL 
+);
+CREATE TABLE IF NOT EXISTS room(
+RoomID INT PRIMARY KEY,
+RoomNumber VARCHAR (50) NOT NULL,
+DepartmentID VARCHAR (50) NOT NULL
+);
+INSERT INTO patient(PatientID, FirsName, LastName, Gender)
+VALUES ('001', 'Olovia', 'Brown', 'Female')
+
+INSERT INTO patient(PatientID, FirsName, LastName, Gender)
+VALUES ('002', 'Etan', 'Davis', 'Male')
+
+INSERT INTO patient(PatientID, FirsName, LastName, Gender)
+VALUES ('003', 'Sophia', 'Miller', 'Female')
+
+INSERT INTO doctor(DoctorID, FirsName, LastName, Gender)
+VALUES ('001', 'Olivia', 'Brown', 'Female')
+
+INSERT INTO doctor(DoctorID, FirsName, LastName, Gender)
+VALUES ('002', 'Ethan', 'Davis', 'Male')
+
+INSERT INTO doctor(DoctorID, FirsName, LastName, Gender)
+VALUES ('003', 'Sophia', 'Miller', 'Female')
+
+INSERT INTO department(DepartmentID, DepartmentName)
+VALUES ('001', 'Neurology')
+
+INSERT INTO department(DepartmentID, DepartmentName)
+VALUES ('002', 'Dermatology')
+
+INSERT INTO department(DepartmentID, DepartmentName)
+VALUES ('003', 'Internal Medicine')
+
+INSERT INTO appointment(AppointmentID, PatientID, DoctorID, AppoinmentDate)
+VALUES ('001', 'P101', 'D001', '05/10/2025')
+
+INSERT INTO appointment(AppointmentID, PatientID, DoctorID, AppoinmentDate)
+VALUES ('002', 'PP102', 'D002', '06/10/2025')
+
+INSERT INTO appointment(AppointmentID, PatientID, DoctorID, AppoinmentDate)
+VALUES ('003', 'P103', 'D103', '07/10/2025')
+
+INSERT INTO room(RoomID, RoomNumber, DepartmentID)
+VALUES ('001', '301', 'DEP11')
+
+INSERT INTO room(RoomID, RoomNumber, DepartmentID)
+VALUES ('002', '301', 'DEP12')
+
+INSERT INTO room(RoomID, RoomNumber, DepartmentID)
+VALUES ('003', '301', 'DEP13')
+
+ALTER TABLE patient 
+ADD Username VARCHAR(50),
+ADD Pasword VARCHAR(50);
+
+UPDATE patient SET Username= 'Angelica'
+WHERE PatientID= '1'
+
+UPDATE patient SET Username= 'Ange'
+WHERE PatientID= '2'
+
+UPDATE patient SET Username= 'Ekang'
+WHERE PatientID= '3'
+
+UPDATE patient SET Pasword= '1122'
+WHERE PatientID= '1'
+
+UPDATE patient SET Pasword= '112233'
+WHERE PatientID= '2'
+
+UPDATE patient SET Pasword= '223344'
+WHERE PatientID= '3'
